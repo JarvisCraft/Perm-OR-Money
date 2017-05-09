@@ -2,7 +2,7 @@ name: PermOrMoney
 main: ru.progrm_jarvis.permormoney.PermOrMoney
 version: 1.0
 author: PROgrm_JARvis (JARvis (Пётр) PROgrammer)
-softdepend: [Vault]
+depend: [Vault]
 commands:
   permormoney:
     description: 'Give permission or perform command!'
