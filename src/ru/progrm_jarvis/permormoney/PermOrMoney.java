@@ -26,11 +26,15 @@ public class PermOrMoney extends JavaPlugin {
         }
         PluginDescriptionFile pluginDescriptionFile = getDescription();
         if (!setupEconomy() ) {
-            Tracer.err("No Vault found!");
+            Tracer.err("Could not load Vault-Economy!");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        setupPermissions();
+        if (!setupPermissions()) {
+            Tracer.err("Could not load Vault-Permissions!");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
         registerCommands();
         Tracer.msg(pluginDescriptionFile.getName() + " has been enabled. Version: " + pluginDescriptionFile.getVersion());
     }
