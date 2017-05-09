@@ -1,0 +1,11 @@
+name: PermOrMoney
+main: ru.progrm_jarvis.permormoney.PermOrMoney
+version: 1.0
+author: PROgrm_JARvis (JARvis (Пётр) PROgrammer)
+softdepend: [Vault]
+commands:
+  permormoney:
+    description: 'Give permission or perform command!'
+    aliases: [pom, porm, permom, permorm, pomoney, pormoney]
+    permission: permormoney.command.permormoney
+    usage: /permormoney <player> <permission> <eco> [command]
