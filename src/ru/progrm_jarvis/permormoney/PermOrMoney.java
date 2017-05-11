@@ -24,6 +24,7 @@ public class PermOrMoney extends JavaPlugin {
         if (permOrMoney == null) {
             permOrMoney = this;
         }
+        enableLogger();
         PluginDescriptionFile pluginDescriptionFile = getDescription();
         if (!setupEconomy() ) {
             Tracer.err("Could not load Vault-Economy!");
@@ -42,6 +43,10 @@ public class PermOrMoney extends JavaPlugin {
     public void onDisable() {
         PluginDescriptionFile pluginDescriptionFile = getDescription();
         Tracer.msg(pluginDescriptionFile.getName() + " has been disabled. Version: " + pluginDescriptionFile.getVersion());
+    }
+    //Logging
+    private void enableLogger () {
+        Tracer.setLogger(getLogger());
     }
     //Economy
     private static Economy economy;

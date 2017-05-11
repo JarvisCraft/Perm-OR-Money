@@ -31,7 +31,6 @@ public class CommandPermOrMoney implements CommandExecutor {
                     if (args.length >=4) {
                         StringBuilder cmd = new StringBuilder("");
                         for (int i = 3; i < args.length; i++) cmd.append(args[i]).append(" ");
-                        Tracer.err(player.getName());
                         cmd = new StringBuilder(cmd.toString().replace("%p%", player.getName()));
                         cmd = new StringBuilder(cmd.toString().substring(0, cmd.length()-1));
                         if (PermOrMoney.getInstance().getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), cmd.toString())) msg(sender, "Performed command " +
@@ -58,7 +57,7 @@ public class CommandPermOrMoney implements CommandExecutor {
         if (sender instanceof Player) {
             sender.sendMessage(ChatColor.RED + message);
         } else {
-            Tracer.err(message);
+            Tracer.msg(message);
         }
     }
 }
